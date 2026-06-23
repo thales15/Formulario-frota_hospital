@@ -1,3 +1,10 @@
+<?php 
+    if(!isset($_GET['idVeiculo'])) {
+        header('Location: ../index.php?signFail=true');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -15,7 +22,7 @@
 <div class="container mt-5">
     <div class="card shadow">
         <div class="card-header bg-primary text-white">
-            <h3 class="mb-0">Cadastro de Veículo</h3>
+            <h3 class="mb-0">Cadastro de Veículo Terrestre</h3>
         </div>
 
         <div class="card-body">

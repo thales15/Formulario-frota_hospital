@@ -1,5 +1,13 @@
+<?php 
+    if(!isset($_GET['idVeiculo'])) {
+        header('Location: ../index.php?signFail=true');
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,120 +16,123 @@
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
 
-<?php include "../_inc/header.php" ?>
+    <?php include "../_inc/header.php" ?>
 
-<div class="container mt-5">
-    <div class="card shadow">
-        <div class="card-header bg-primary text-white">
-            <h3 class="mb-0">Cadastro de Veículo</h3>
-        </div>
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h3 class="mb-0">Cadastro de Veículo Aéreo</h3>
+            </div>
 
-        <div class="card-body">
-            <form action="salvar_veiculo.php" method="POST">
+            <div class="card-body">
+                <form action="salvar_aereo.php" method="POST">
+                    <input type="hidden" name="veaIdVeiculo" value="<?= $_GET['idVeiculo'] ?>">
 
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="veiTipoGeral" class="form-label">Tipo Geral *</label>
-                        <select class="form-select" id="veiTipoGeral" name="veiTipoGeral" required>
-                            <option value="">Selecione</option>
-                            <option value="Terrestre">Terrestre</option>
-                            <option value="Aereo">Aéreo</option>
-                            
-                        </select>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="veaMatriculaAnac" class="form-label">
+                                Matrícula ANAC *
+                            </label>
+                            <input type="text" class="form-control" id="veaMatriculaAnac" name="veaMatriculaAnac"
+                                maxlength="7" required>
+                        </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <label for="veiIdentificacaoPrincipal" class="form-label">
-                            Identificação Principal *
-                        </label>
-                        <input type="text"
-                               class="form-control"
-                               id="veiIdentificacaoPrincipal"
-                               name="veiIdentificacaoPrincipal"
-                               maxlength="7"
-                               required>
-                    </div>
-                </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="veaPrefixoRadio" class="form-label">Prefixo da Rádio *</label>
+                            <input type="text" class="form-control" id="veaPrefixoRadio" name="veaPrefixoRadio"
+                                maxlength="40" required>
+                        </div>
 
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="veiMarca" class="form-label">Marca</label>
-                        <input type="text"
-                               class="form-control"
-                               id="veiMarca"
-                               name="veiMarca"
-                               maxlength="40">
+                        <div class="col-md-6">
+                            <label for="veacapacidadePessoas" class="form-label">Capacidade de Pessoas *</label>
+                            <input type="number" id="veacapacidadePessoas" name="veacapacidadePessoas"
+                                class="form-control" min="1" required>
+                        </div>
                     </div>
 
-                    <div class="col-md-6">
-                        <label for="veiModelo" class="form-label">Modelo</label>
-                        <input type="text"
-                               class="form-control"
-                               id="veiModelo"
-                               name="veiModelo"
-                               maxlength="40">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="veaAutonomiaVoo" class="form-label">
+                                Autonomia de Voo *
+                            </label>
+                            <input type="number" class="form-control" id="veaAutonomiaVoo" name="veaAutonomiaVoo"
+                                min="1" required>
+                        </div>
                     </div>
-                </div>
+                    <div class="row mb-3">
 
-                <div class="row mb-3">
-                    <div class="col-md-4">
-                        <label for="veiAnoFabricacao" class="form-label">
-                            Ano de Fabricação
-                        </label>
-                        <input type="date"
-                               class="form-control"
-                               id="veiAnoFabricacao"
-                               name="veiAnoFabricacao">
+                        <div class="col-md-4">
+                            <label for="veaPossuiKitMedico" class="form-label">
+                                Possui kit médico?
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiKitMedico" name="veaPossuiKitMedico"
+                                value="Sim" required>
+                            <label for="veaPossuiKitMedico" class="form-check-label">
+                                Sim
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiKitMedico" name="veaPossuiKitMedico"
+                                value="Não" required>
+                            <label for="veaPossuiKitMedico" class="form-check-label">
+                                Não
+                            </label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="veaPossuiMaca" class="form-label">
+                                Possui maca?
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiMaca" name="veaPossuiMaca"
+                                value="Sim" required>
+                            <label for="veaPossuiMaca" class="form-check-label">
+                                Sim
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiMaca" name="veaPossuiMaca"
+                                value="Não" required>
+                            <label for="veaPossuiMaca" class="form-check-label">
+                                Não
+                            </label>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="veaPossuiOxigenio" class="form-label">
+                                Possui oxigênio?
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiOxigenio" name="veaPossuiOxigenio"
+                                value="Sim" required>
+                            <label for="veaPossuiOxigenio" class="form-check-label">
+                                Sim
+                            </label>
+                            <input type="radio" class="form-check-input" id="veaPossuiOxigenio" name="veaPossuiOxigenio"
+                                value="Não" required>
+                            <label for="veaPossuiOxigenio" class="form-check-label">
+                                Não
+                            </label>
+                        </div>
+
+                        
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="veiCor" class="form-label">Cor</label>
-                        <input type="text"
-                               class="form-control"
-                               id="veiCor"
-                               name="veiCor"
-                               maxlength="20">
+                    <div class="d-flex justify-content-end gap-2">
+                        <button type="reset" class="btn btn-secondary">
+                            Limpar
+                        </button>
+
+                        <button type="submit" class="btn btn-success">
+                            Salvar Veículo
+                        </button>
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="veiKmHorasAtual" class="form-label">
-                            KM Atual
-                        </label>
-                        <input type="number"
-                               class="form-control"
-                               id="veiKmHorasAtual"
-                               name="veiKmHorasAtual"
-                               min="0">
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="veiStatus" class="form-label">Status</label>
-                    <select class="form-select" id="veiStatus" name="veiStatus" require>
-                        <option value="">Selecione</option>
-                        <option value="Disponivel">Disponivel</option>
-                        <option value="Utilizando">utilizando</option>
-                        <option value="Manutenção">Manutenção</option>
-                    </select>
-                </div>
-
-                <div class="d-flex justify-content-end gap-2">
-                    <button type="reset" class="btn btn-secondary">
-                        Limpar
-                    </button>
-
-                    <button type="submit" class="btn btn-success">
-                        Salvar Veículo
-                    </button>
-                </div>
-
-            </form>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+
+</html>

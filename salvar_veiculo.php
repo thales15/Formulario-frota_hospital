@@ -29,7 +29,7 @@ if($stmt->execute()){
     exit;
    }
 }else{
-    header('Location: form.php?signFail=true');
+    header('Location: index.php?signFail=true');
     exit;
 }
 }else{

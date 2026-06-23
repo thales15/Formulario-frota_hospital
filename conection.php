@@ -2,9 +2,9 @@
 
 $server = "localhost";
 $user = "root";
-$porta = 3307; //Na aula do Hélio utilizar a porta 3307
-//$banco = "banco_hospital"; //banco padrão
-$banco = "hospital"; // banco no computador do Hélio
+$porta = 3306; //Na aula do Hélio utilizar a porta 3307
+$banco = "banco_hospital"; //banco padrão
+//$banco = "hospital"; // banco no computador do Hélio
 $base_url = "http://localhost/cadastrofrotaHospital";
 
 if (!defined('BASE_URL')) define('BASE_URL', $base_url);

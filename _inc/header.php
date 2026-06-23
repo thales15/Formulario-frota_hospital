@@ -18,8 +18,8 @@
             Visualizar veículos
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Aéreos</a></li>
-            <li><a class="dropdown-item" href="#">Terrestres</a></li>
+            <li><a class="dropdown-item" href="<?= $base_url ?>/tiposVeiculos/lista_aereo.php">Aéreos</a></li>
+            <li><a class="dropdown-item" href="<?= $base_url ?>/tiposVeiculos/lista_terrestre.php">Terrestres</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

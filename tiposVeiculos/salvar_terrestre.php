@@ -18,13 +18,13 @@ foreach ($_POST as $key => $value) {
     $stmt->bindValue(':' . $key, $value);
 }
 if($stmt->execute()){
-    $idVeiculo = $con->lastInsertId();
+   header('Location: ./lista_terrestre.php?signSucess=true'); 
 }else{
-    header('Location: form.php?signFail=true');
+    header('Location: form_terrestre.php?idVeiculo='. $_POST['vetIdVeiculo'] .'&signFail=true');
     exit;
 }
 }else{
-    header('Location: index.php?null=true');
+    header('Location: form_terrestre.php?idVeiculo='. $_POST['vetIdVeiculo'] .'&null=true');
     exit;
 }
 
