@@ -19,7 +19,10 @@
     <div class="collapse navbar-collapse row justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">cadastrar Veículo</a>
+          <a class="nav-link active" aria-current="page" href="#">Cadastrar Veículo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Enviar manutenção</a>
         </li>
         
         <li class="nav-item dropdown">
@@ -31,8 +34,14 @@
             <li><a class="dropdown-item" href="#">Terrestres</a></li>
           </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Retirar</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ações
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Retirar</a></li>
+            <li><a class="dropdown-item" href="#">Devolver</a></li>
+          </ul>
         </li>
       </ul>
     </div>
@@ -50,8 +59,8 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="tipo" class="form-label">Tipo Geral *</label>
-                        <select class="form-select" id="tipo" name="tipo" required>
+                        <label for="veiTipoGeral" class="form-label">Tipo Geral *</label>
+                        <select class="form-select" id="veiTipoGeral" name="veiTipoGeral" required>
                             <option value="">Selecione</option>
                             <option value="Terrestre">Terrestre</option>
                             <option value="Aereo">Aéreo</option>
@@ -60,13 +69,13 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="placaIdentificacao" class="form-label">
+                        <label for="veiIdentificacaoPrincipal" class="form-label">
                             Identificação Principal *
                         </label>
                         <input type="text"
                                class="form-control"
-                               id="placaIdentificacao"
-                               name="placaIdentificacao"
+                               id="veiIdentificacaoPrincipal"
+                               name="veiIdentificacaoPrincipal"
                                maxlength="7"
                                required>
                     </div>
@@ -74,59 +83,59 @@
 
                 <div class="row mb-3">
                     <div class="col-md-6">
-                        <label for="marca" class="form-label">Marca</label>
+                        <label for="veiMarca" class="form-label">Marca</label>
                         <input type="text"
                                class="form-control"
-                               id="marca"
-                               name="marca"
+                               id="veiMarca"
+                               name="veiMarca"
                                maxlength="40">
                     </div>
 
                     <div class="col-md-6">
-                        <label for="modelo" class="form-label">Modelo</label>
+                        <label for="veiModelo" class="form-label">Modelo</label>
                         <input type="text"
                                class="form-control"
-                               id="modelo"
-                               name="modelo"
+                               id="veiModelo"
+                               name="veiModelo"
                                maxlength="40">
                     </div>
                 </div>
 
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <label for="anoFabricacao" class="form-label">
+                        <label for="veiAnoFabricacao" class="form-label">
                             Ano de Fabricação
                         </label>
                         <input type="date"
                                class="form-control"
-                               id="anoFabricacao"
-                               name="anoFabricacao">
+                               id="veiAnoFabricacao"
+                               name="veiAnoFabricacao">
                     </div>
 
                     <div class="col-md-4">
-                        <label for="cor" class="form-label">Cor</label>
+                        <label for="veiCor" class="form-label">Cor</label>
                         <input type="text"
                                class="form-control"
-                               id="cor"
-                               name="cor"
+                               id="veiCor"
+                               name="veiCor"
                                maxlength="20">
                     </div>
 
                     <div class="col-md-4">
-                        <label for="kmAtual" class="form-label">
+                        <label for="veiKmHorasAtual" class="form-label">
                             KM Atual
                         </label>
                         <input type="number"
                                class="form-control"
-                               id="kmAtual"
-                               name="kmAtual"
+                               id="veiKmHorasAtual"
+                               name="veiKmHorasAtual"
                                min="0">
                     </div>
                 </div>
 
                 <div class="mb-3">
-                    <label for="status" class="form-label">Status</label>
-                    <select class="form-select" id="status" name="status">
+                    <label for="veiStatus" class="form-label">Status</label>
+                    <select class="form-select" id="veiStatus" name="veiStatus" require>
                         <option value="">Selecione</option>
                         <option value="Disponivel">Disponivel</option>
                         <option value="Utilizando">utilizando</option>
