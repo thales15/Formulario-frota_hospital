@@ -1,3 +1,5 @@
+<?php require "conection.php" ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -10,43 +12,7 @@
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.php">Hospital Funerário Santa Maria</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse row justify-content-end" id="navbarSupportedContent">
-      <ul class="navbar-nav mb-2">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Cadastrar Veículo</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Enviar manutenção</a>
-        </li>
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Visualizar veículos
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Aéreos</a></li>
-            <li><a class="dropdown-item" href="#">Terrestres</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Ações
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Retirar</a></li>
-            <li><a class="dropdown-item" href="#">Devolver</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<?php include "./_inc/header.php" ?>
 
 <div class="container mt-5">
     <div class="card shadow">

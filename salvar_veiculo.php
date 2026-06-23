@@ -1,13 +1,14 @@
 <?php 
-require_once 'conection.php';
-// echo var_dump($_POST);
 
- $table = 'tblveiculo';
+require_once './conection.php';
+
+//echo var_dump($_POST);
+
+$table = 'tblveiculo';
  $placeholders = [];
  $fields = [];
 
-if(isset($_POST['vetIdVeiculo']) && isset($_POST['vetRenavam']) && isset($_POST['vetChassi'])  && isset($_POST['vetCombustivel'])  && isset($_POST['vetTipoVeiculo'])  && isset($_POST['vetPossuiMaca'])  && isset($_POST['vetPossuiOxigenio'])  && isset($_POST['vetPossuiDesfibrilador'])){
-
+if(isset($_POST['veiTipoGeral']) && isset($_POST['veiIdentificacaoPrincipal']) && isset($_POST['veiStatus'])){
     foreach ($_POST as $key => $value) {
     $fields[] = $key;
     $placeholders[] = ':' . $key;
@@ -19,6 +20,14 @@ foreach ($_POST as $key => $value) {
 }
 if($stmt->execute()){
     $idVeiculo = $con->lastInsertId();
+   if($_POST['veiTipoGeral'] == "Terrestre"){
+    header('Location: ./tiposVeiculos/form_terrestre.php?idVeiculo=' . $idVeiculo);
+   }else if($_POST['veiTipoGeral'] == "Aereo"){
+    header('Location: ./tiposVeiculos/form_aereo.php?idVeiculo=' . $idVeiculo);
+   }else{
+    echo "Tipo de veículo inválido.";
+    exit;
+   }
 }else{
     header('Location: form.php?signFail=true');
     exit;
@@ -27,6 +36,5 @@ if($stmt->execute()){
     header('Location: index.php?null=true');
     exit;
 }
-
 
 ?>
