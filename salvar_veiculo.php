@@ -1,3 +1,6 @@
 <?php 
-echo var_dump($_POST);
+require_once 'conection.php';
+// echo var_dump($_POST);
+
+
 ?>
