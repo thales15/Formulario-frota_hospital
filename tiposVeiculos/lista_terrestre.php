@@ -81,14 +81,26 @@ $veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <?= htmlspecialchars($veiculo['vetNivelAmbulancia']) ?>
                                     </td>
 
-                                    <td>
-                                        <?= htmlspecialchars($veiculo['vetPossuiMaca']) ?>
+                                   <td class="text-center">
+                                        <?php if($veiculo['vetPossuiMaca'] == 'Sim'): ?>
+                                            <i class="bi bi-check-circle-fill text-success"></i>
+                                        <?php elseif($veiculo['vetPossuiMaca'] == 'Nao'):?>
+                                            <i class="bi bi-x-circle-fill text-danger"></i>
+                                        <?php endif; ?>
                                     </td>
-                                    <td>
-                                        <?= htmlspecialchars($veiculo['vetPossuiOxigenio']) ?>
+                                    <td class="text-center">
+                                        <?php if($veiculo['vetPossuiOxigenio'] == 'Sim'): ?>
+                                            <i class="bi bi-check-circle-fill text-success"></i>
+                                        <?php elseif($veiculo['vetPossuiOxigenio'] == 'Nao'):?>
+                                            <i class="bi bi-x-circle-fill text-danger"></i>
+                                        <?php endif; ?>
                                     </td>
-                                    <td>
-                                        <?= htmlspecialchars($veiculo['vetPossuiDesfibrilador']) ?>
+                                   <td class="text-center">
+                                        <?php if($veiculo['vetPossuiDesfibrilador'] == 'Sim'): ?>
+                                            <i class="bi bi-check-circle-fill text-success"></i>
+                                        <?php elseif($veiculo['vetPossuiDesfibrilador'] == 'Nao'):?>
+                                            <i class="bi bi-x-circle-fill text-danger"></i>
+                                        <?php endif; ?>
                                     </td>
                                     
 

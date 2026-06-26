@@ -76,7 +76,7 @@
                                 Sim
                             </label>
                             <input type="radio" class="form-check-input" id="veaPossuiKitMedico" name="veaPossuiKitMedico"
-                                value="Não" required>
+                                value="Nao" required>
                             <label for="veaPossuiKitMedico" class="form-check-label">
                                 Não
                             </label>
@@ -92,7 +92,7 @@
                                 Sim
                             </label>
                             <input type="radio" class="form-check-input" id="veaPossuiMaca" name="veaPossuiMaca"
-                                value="Não" required>
+                                value="Nao" required>
                             <label for="veaPossuiMaca" class="form-check-label">
                                 Não
                             </label>
@@ -108,7 +108,7 @@
                                 Sim
                             </label>
                             <input type="radio" class="form-check-input" id="veaPossuiOxigenio" name="veaPossuiOxigenio"
-                                value="Não" required>
+                                value="Nao" required>
                             <label for="veaPossuiOxigenio" class="form-check-label">
                                 Não
                             </label>

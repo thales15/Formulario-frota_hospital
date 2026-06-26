@@ -59,7 +59,7 @@
                         <select class="form-select" id="vetCombustivel" name="vetCombustivel" required>
                             <option value="">Selecione</option>
                             <option value="Gasolina">Gasolina</option>
-                            <option value="Álcool">Álcool</option>
+                            <option value="Alcool">Álcool</option>
                             <option value="Diesel">Diesel</option>
                         </select>
                     </div>
@@ -107,7 +107,7 @@
                                class="form-check-input"
                                id="vetPossuiMaca"
                                name="vetPossuiMaca"
-                               value="Não"
+                               value="Nao"
                                required>
                         <label for="vetPossuiMaca" class="form-check-label">
                             Não
@@ -131,7 +131,7 @@
                                class="form-check-input"
                                id="vetPossuiOxigenio"
                                name="vetPossuiOxigenio"
-                               value="Não"
+                               value="Nao"
                                required>
                         <label for="vetPossuiOxigenio" class="form-check-label">
                             Não
@@ -155,7 +155,7 @@
                                class="form-check-input"
                                id="vetPossuiDesfibrilador"
                                name="vetPossuiDesfibrilador"
-                               value="Não"
+                               value="Nao"
                                required>
                         <label for="vetPossuiDesfibrilador" class="form-check-label">
                             Não
