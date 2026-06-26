@@ -100,13 +100,8 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="veiStatus" class="form-label">Status</label>
-                    <select class="form-select" id="veiStatus" name="veiStatus" require>
-                        <option value="">Selecione</option>
-                        <option value="Disponivel">Disponivel</option>
-                        <option value="Utilizando">utilizando</option>
-                        <option value="Manutenção">Manutenção</option>
-                    </select>
+                    <input type="hidden" class="form-select" id="veiStatus" name="veiStatus" value="Disponivel">
+                      
                 </div>
 
                 <div class="d-flex justify-content-end gap-2">
