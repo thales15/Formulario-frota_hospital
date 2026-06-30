@@ -242,6 +242,8 @@ require "../conection.php";
 
                             </div>
 
+                            <input type="hidden" name="manStatus" value="Em Andamento">
+
                             <div class="text-end">
 
                                 <button type="reset" class="btn btn-secondary">

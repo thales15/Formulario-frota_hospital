@@ -5,10 +5,12 @@ require '../conection.php';
 $sql = "
     SELECT
        v.veiIdentificacaoPrincipal,
+       v.idVeiculo,
        m.*
     FROM tblmanutencao_veiculo m
     INNER JOIN tblveiculo v 
         ON m.manIdVeiculo = v.idVeiculo
+        WHERE m.manStatus = 'Em Andamento'
     ORDER BY m.idManutencao ASC
 ";
 
@@ -57,9 +59,9 @@ $manutencoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </thead>
 
                     <tbody>
-                        <?php if(count($manutencoes) > 0): ?>
+                        <?php if (count($manutencoes) > 0): ?>
 
-                            <?php foreach($manutencoes as $manutencao): ?>
+                            <?php foreach ($manutencoes as $manutencao): ?>
                                 <tr>
                                     <td><?= $manutencao['idManutencao'] ?></td>
 
@@ -78,20 +80,21 @@ $manutencoes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <?= htmlspecialchars($manutencao['manDescricao']) ?>
                                     </td>
 
-                                   <td>
-                                       <?= htmlspecialchars($manutencao['manValor']) ?> 
+                                    <td>
+                                        <?= htmlspecialchars($manutencao['manValor']) ?>
                                     </td>
                                     <td>
-                                      <?= htmlspecialchars($manutencao['manOficina']) ?>
+                                        <?= htmlspecialchars($manutencao['manOficina']) ?>
                                     </td>
-                                   <td>
+                                    <td>
                                         <?= htmlspecialchars($manutencao['manDataManutencao']) ?>
                                     </td>
-                                   <td>
+                                    <td>
                                         <?= htmlspecialchars($manutencao['manProximaManutencao']) ?>
                                     </td>
                                     <td>
-                                        <a href="finalizar.php?id=<?= $manutencao['idManutencao'] ?>" class="btn btn-sm btn-success">
+                                        <a href="finalizar.php?id=<?= $manutencao['idVeiculo'] ?>&manId=<?= $manutencao['idManutencao'] ?>"
+                                            class="btn btn-sm btn-success">
                                             Finalizar
                                         </a>
                                     </td>

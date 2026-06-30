@@ -33,8 +33,8 @@
             Ações
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Retirar</a></li>
-            <li><a class="dropdown-item" href="#">Devolver</a></li>
+            <li><a class="dropdown-item" href="<?= $base_url ?>/retiradaRetorno/form_retirada.php">Retirar</a></li>
+            <li><a class="dropdown-item" href="<?= $base_url ?>/retiradaRetorno/form_retorno.php">Devolver</a></li>
           </ul>
         </li>
       </ul>
