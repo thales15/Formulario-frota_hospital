@@ -5,13 +5,15 @@ require '../conection.php';
 $sql = "
     SELECT
        v.veiIdentificacaoPrincipal,
-       m.idMotorista,
+       f.funNome,
        r.*
     FROM tblsaida_retorno_veiculo r
     INNER JOIN tblveiculo v 
         ON r.srvIdVeiculo = v.idVeiculo
     INNER JOIN tblmotorista m
         ON r.srvIdMotorista = m.idMotorista
+    INNER JOIN tblFuncionario f
+        ON m.motIdFuncionario = f.idFuncionario
     ORDER BY r.idMovimentacao ASC
 ";
 
@@ -69,7 +71,7 @@ $retiradas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                         <?= htmlspecialchars($retirada['veiIdentificacaoPrincipal']) ?>
                                     </td>
                                     <td>
-                                        <?= htmlspecialchars($retirada['srvIdMotorista']) ?>
+                                        <?= htmlspecialchars($retirada['funNome']) ?>
                                     </td>
 
                                     <td>
