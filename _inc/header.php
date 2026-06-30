@@ -8,6 +8,9 @@
     <div class="collapse navbar-collapse row justify-content-end" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2">
         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<?= $base_url ?>/motorista/form.php">Cadastrar Motorista</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="<?= $base_url ?>/index.php">Cadastrar Veículo</a>
         </li>
         <li class="nav-item">
@@ -20,6 +23,8 @@
             Visualizar
           </a>
           <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="<?= $base_url ?>/motorista/lista.php">Motoristas</a></li>
+             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="<?= $base_url ?>/tiposVeiculos/lista_aereo.php">Aéreos</a></li>
             <li><a class="dropdown-item" href="<?= $base_url ?>/tiposVeiculos/lista_terrestre.php">Terrestres</a></li>
              <li><hr class="dropdown-divider"></li>
